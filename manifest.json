@@ -1,0 +1,37 @@
+{
+    "name": "Dark Google",
+    "short_name": "DG",
+    "description": "Save power with black pages.",
+    "version": "1.0",
+    "author":  "IlkemErol-AnilAksoy-OkanDemirel",
+    
+    "icons": {
+        "16": "icon/plug_16.png",
+        "32": "icon/plug_24.png",
+        "48": "icon/plug_32.png",
+        "64": "icon/plug_64.png",
+        "128": "icon/plug_128.png"
+    },
+
+    "permissions": [ 
+        "https://www.google.com.tr/*", "http://www.google.com.tr/*"
+    ],
+    
+    "content_scripts": 
+    [
+        {
+            "matches": ["https://www.google.com.tr/*", "http://www.google.com.tr/*"],
+            "css":  ["dark.css"],
+            "run_at": "document_start",
+            "all_frames" : true
+        }
+
+    ],
+    "browser_action": {
+        "default_icon": "icon/plug_16.png",
+        "default_title": "Information Button",
+        "default_popup": "popup.html"
+    },
+
+    "manifest_version": 2
+}
